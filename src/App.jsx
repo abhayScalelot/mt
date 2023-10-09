@@ -9,6 +9,7 @@ import MegaMenu from "./Pages/MegaMenu";
 import Profile from "./Pages/Profile";
 import Navbar from "./Pages/Navbar";
 import { Route, Routes } from "react-router-dom";
+import Interior from "./Components/Interior";
 
 const App = () => {
   return (
@@ -23,18 +24,13 @@ const App = () => {
           <Route path="chat" element={<Chat />} />
           <Route path="contactus" element={<ContactUs />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="megamenu" element={<MegaMenu />} />
+          <Route path="megamenu" index element={<MegaMenu />}>
+            <Route path="interior" element={<Interior />} />
+          </Route>
           <Route path="profile" element={<Profile />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>
-      {/* <Register />
-      <Login />
-      <Chat />
-      <ContactUs />
-      <Gallery />
-      <MegaMenu />
-      <Profile /> */}
     </>
   );
 };
